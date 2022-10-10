@@ -1,13 +1,13 @@
 import jwt from "jsonwebtoken";
-import { UserAttributes } from "../models/User";
+import { UserModel } from "../models/User";
 
-export const sign = async (user: UserAttributes) => {
+export const sign = async (user: UserModel) => {
   const JWT_SECRET = "qemsaslvjd-33r3:9i9vis3.";
   return new Promise<string | void>((resolve, reject) => {
     jwt.sign(
       {
-        username: user.username,
-        email: user.email,
+        username: user.getDataValue("username"),
+        email: user.getDataValue("email"),
       },
       JWT_SECRET,
       (err: Error | null, token?: string) => {

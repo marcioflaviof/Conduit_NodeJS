@@ -6,14 +6,14 @@ export type UserAttributes = {
   id: number;
   email: string;
   username: string;
-  bio: string;
-  image: string;
+  bio?: string;
+  image?: string;
   password: string;
 };
 
 type CreateUserAttributes = Optional<UserAttributes, "id">;
 
-type UserModel = Model<UserAttributes, CreateUserAttributes>;
+export type UserModel = Model<UserAttributes, CreateUserAttributes>;
 
 const User = sequelize.define<UserModel, CreateUserAttributes>(
   "User",

@@ -12,5 +12,6 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules/*"]
+  "exclude": ["node_modules/*"],
+  "files": ["express.d.ts"]
 }
